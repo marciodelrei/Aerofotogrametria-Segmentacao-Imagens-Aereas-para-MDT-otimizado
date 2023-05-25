@@ -47,11 +47,12 @@ https://www.kaggle.com/code/marciodelrei/drone-image-segmentation/edit
 <!-- 
 ![intro01](http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg) -->
 
-<p align=center>
+<div style="display: flex; justify-content: center; align-items: center; height: 300px;">
+  <img src="caminho_da_imagem.jpg" alt="Descrição da imagem">
   <img alt="intro01" src="http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg" width="400" />
   <img alt="intro02" src="https://www.ptatopografia.com.br/imagens/informacoes/empresas-aerofotogrametria-07.jpg" width="400" />
-  
-</p>
+</div>  
+
 <p align="center">
   <i>buscar fonte das imagens</i>
 </p>
