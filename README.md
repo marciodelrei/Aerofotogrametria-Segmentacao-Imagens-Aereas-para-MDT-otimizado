@@ -14,6 +14,17 @@ Uma breve descrição do artigo que fornece uma visão geral do problema, da met
 
 ## Introdução {#introdução}
 Nesta seção, será introduzido o problema que está sendo abordado, apresentada sua relevância e explicado o objetivo do artigo. Além disso, forneceremos um contexto teórico, revisão da literatura relevante e estabeleceremos a estrutura do restante do artigo.
+<p align="center">
+  <img alt="intro01" src="http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg" width="400" hspace="10" />
+  &nbsp;
+  <img alt="intro02" src="https://www.ptatopografia.com.br/imagens/informacoes/empresas-aerofotogrametria-07.jpg" width="400" hspace="10" />
+</p>
+
+<p align="center">
+  <i>buscar fonte das imagens</i>
+</p>
+
+Solução baseada em modelo U-NET usando como fonte de conhecimento o artigo "[Semantic Segmentation of Aerial Imagery Using U-Net in Python](https://towardsdatascience.com/semantic-segmentation-of-aerial-imagery-using-u-net-in-python-552705238514)" de Andrew Joseph Davies
 
 ## Metodologia {#metodologia}
 Descreveremos detalhadamente os métodos e procedimentos utilizados para resolver o problema. Explicaremos a abordagem adotada, as técnicas ou ferramentas empregadas, bem como a coleta e análise dos dados. Forneceremos informações suficientes para que outros pesquisadores possam reproduzir o estudo.
@@ -41,23 +52,12 @@ Drone Image Segmentation -U-Net architecture based on Manoj Gopalakrishna in Kag
 https://www.kaggle.com/code/marciodelrei/drone-image-segmentation/edit
 
 ------------------------------------------------------------------------------
-# Segmentação de Imagens Aéreas para MDT otimizado
-<span font-color="red"> Criar indice </span>
+
 ## Introdução
 <!-- 
 ![intro01](http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg) -->
 
-<div style="display: flex; justify-content: center; align-items: center; height: 300px;">
-  <img src="caminho_da_imagem.jpg" alt="Descrição da imagem">
-  <img alt="intro01" src="http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg" width="400" />
-  <img alt="intro02" src="https://www.ptatopografia.com.br/imagens/informacoes/empresas-aerofotogrametria-07.jpg" width="400" />
-</div>  
 
-<p align="center">
-  <i>buscar fonte das imagens</i>
-</p>
-
-Solução baseada em modelo U-NET usando como fonte de conhecimento o artigo "[Semantic Segmentation of Aerial Imagery Using U-Net in Python](https://towardsdatascience.com/semantic-segmentation-of-aerial-imagery-using-u-net-in-python-552705238514)" de Andrew Joseph Davies
 
 ## Aerofotogrametria
 A aerofotogrametria é uma técnica de obtenção de informações do terreno ou superfície terrestre a partir de fotografias aéreas. Ela é utilizada para criar modelos digitais de superfície, mapas topográficos e ortofotos de áreas geográficas extensas, como cidades, florestas, rios, entre outros. A técnica envolve o uso de câmeras montadas em aeronaves, drones ou balões para capturar imagens aéreas do terreno. Em seguida, são aplicados algoritmos e técnicas de processamento de imagem para extrair informações geográficas e topográficas precisas e úteis para uma variedade de aplicações em engenharia, planejamento urbano, agricultura, meio ambiente, entre outras áreas.
