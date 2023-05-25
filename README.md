@@ -1,3 +1,36 @@
+# Segmentação de Imagens Aéreas para MDT otimizado
+
+## Índice
+1. [Resumo/Abstract](#resumoabstract)
+2. [Introdução](#introdução)
+3. [Metodologia](#metodologia)
+4. [Resultados](#resultados)
+5. [Discussão](#discussão)
+6. [Conclusão](#conclusão)
+7. [Referências](#referências)
+
+## Resumo/Abstract {#resumoabstract}
+Uma breve descrição do artigo que fornece uma visão geral do problema, da metodologia utilizada, dos principais resultados e das conclusões.
+
+## Introdução {#introdução}
+Nesta seção, será introduzido o problema que está sendo abordado, apresentada sua relevância e explicado o objetivo do artigo. Além disso, forneceremos um contexto teórico, revisão da literatura relevante e estabeleceremos a estrutura do restante do artigo.
+
+## Metodologia {#metodologia}
+Descreveremos detalhadamente os métodos e procedimentos utilizados para resolver o problema. Explicaremos a abordagem adotada, as técnicas ou ferramentas empregadas, bem como a coleta e análise dos dados. Forneceremos informações suficientes para que outros pesquisadores possam reproduzir o estudo.
+
+## Resultados {#resultados}
+Apresentaremos os resultados obtidos em relação ao problema em questão. Utilizaremos tabelas, gráficos ou outros recursos visuais para facilitar a compreensão dos dados. Faremos uma análise objetiva dos resultados e discutiremos sua relevância em relação ao objetivo do estudo.
+
+## Discussão {#discussão}
+Nesta seção, interpretaremos e discutiremos os resultados apresentados anteriormente. Analisaremos as descobertas à luz da literatura existente, destacando semelhanças, diferenças e contribuições para a área de estudo. Discutiremos também as limitações do estudo e possíveis direções para pesquisas futuras.
+
+## Conclusão {#conclusão}
+Resumiremos as principais descobertas do estudo e destacaremos sua relevância em relação ao problema inicialmente proposto. Evitaremos repetir informações já apresentadas e forneceremos uma visão geral clara do trabalho realizado.
+
+## Referências {#referências}
+Listaremos todas as fontes citadas ao longo do artigo, seguindo o estilo de citação apropriado (por exemplo, APA, MLA, ABNT). Certificaremos de incluir todas as informações necessárias para que os leitores possam localizar as fontes.
+
+------------------------------------------------------------------------------------------------------------
 <p>Drone-Image-Segmentation</p>
 Drone Image Segmentation -U-Net architecture based on Manoj Gopalakrishna in Kaggle
 [Manoj ](https://www.kaggle.com/code/manojgowda65/drone-image-segmentation-u-net-architecture)
