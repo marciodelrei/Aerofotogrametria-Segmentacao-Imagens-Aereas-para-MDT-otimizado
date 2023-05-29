@@ -1,19 +1,4 @@
-# Segmentação de Imagens Aéreas para MDT otimizado
-
-## Índice
-1. [Resumo/Abstract](#resumoabstract)
-2. [Introdução](#introdução)
-3. [Metodologia](#metodologia)
-4. [Resultados](#resultados)
-5. [Discussão](#discussão)
-6. [Conclusão](#conclusão)
-7. [Referências](#referências)
-
-## Resumo/Abstract {#resumoabstract}
-Uma breve descrição do artigo que fornece uma visão geral do problema, da metodologia utilizada, dos principais resultados e das conclusões.
-
-## Introdução {#introdução}
-Nesta seção, será introduzido o problema que está sendo abordado, apresentada sua relevância e explicado o objetivo do artigo. Além disso, forneceremos um contexto teórico, revisão da literatura relevante e estabeleceremos a estrutura do restante do artigo.
+# Aerofotogrametria - Segmentação de Imagens Aéreas para MDT otimizado
 <p align="center">
   <img alt="intro01" src="http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg" width="400" hspace="10" />
   &nbsp;
@@ -23,6 +8,32 @@ Nesta seção, será introduzido o problema que está sendo abordado, apresentad
 <p align="center">
   <i>buscar fonte das imagens</i>
 </p>
+
+## Índice
+1. [Resumo](#resumo)
+2. [Introdução](#introdução)
+3. [Metodologia](#metodologia)
+4. [Resultados](#resultados)
+5. [Discussão](#discussão)
+6. [Conclusão](#conclusão)
+7. [Referências](#referências)
+
+## Resumo
+Ferramentas e aplicativos de Aerofotogrametria vêm crescendo e sendo usados como uma ótima alternativa para criação de modelos tridimensionais representando fielmente e virtualmente relevos reais. Dentre eles, Agisoft Metashape (antigo Agisoft Photoscan), Drone Deploy, Open Drone Map (ODM - foco deste experimento). Estes softwares se prevalecem de algoritmos de estereoscopia e triangulação de pontos conhecidos em amostras tomadas de pontos diferentes. O input destas operações, normalmente são muitas fotos do Local de Interesse. Estas operações resultam em produtos mensuráveis como Ortofotos e Modelo Digital do Terrenos em 3D, todos georrefenciados.
+
+Para melhorar a precisão do Modelo Digital do Terreno e torná-lo mais fiel em sua representação digital, há possibilidade de se utilizar máscaras, criadas manulamente com editores gráficos, que identificam elementos fora do espectro de Terreno, como casas, construções, carros, cursos e espelhos d'água, grandes massas verdes como aglomerados de árvores e florestas. Este experimento foca na construção automática destas máscaras através de algoritmo conversor e da Segmentação de Imagens através da Aquitetura de Rede U-NET, onde serão criados modelos usando datasets diferentes com suas respectivas anotações. As máscaras serão reprocessadas nos ODM e seus resultados servirão de comparativo como produto deste experimento.
+
+## Abstract
+Title: Automatic Mask Generation for Improving Digital Terrain Models in Photogrammetry
+
+Aerophotogrammetry tools and applications have been growing in popularity and are being used as excellent alternatives for creating three-dimensional models that faithfully and virtually represent real terrains. Among these tools are Agisoft Metashape (formerly Agisoft Photoscan), Drone Deploy, and Open Drone Map (ODM - the focus of this experiment). These software leverage stereoscopy algorithms and triangulation of known points from different samples. Typically, the input for these operations consists of multiple photos of the Area of Interest. The outputs of these operations include measurable products such as Orthophotos and 3D Digital Terrain Models, all georeferenced.
+
+To enhance the accuracy and fidelity of the Digital Terrain Model representation, masks can be used to identify elements outside the Terrain spectrum, such as buildings, houses, vehicles, water bodies, and large green areas such as clusters of trees and forests. These masks are manually created using graphic editing software. This experiment focuses on the automatic construction of these masks using a conversion algorithm and Image Segmentation through the U-NET Network Architecture. Models will be created using different datasets and their respective annotations. The masks will then be reprocessed in ODM, and the results will serve as a comparative analysis for this experiment.
+
+## Introdução {#introdução}
+A técnica de Aerofotogrametria acelera o processo de estudos de relevo através do aerolevantamento feito por sensores remotos, neste caso 
+
+Nesta seção, será introduzido o problema que está sendo abordado, apresentada sua relevância e explicado o objetivo do artigo. Além disso, forneceremos um contexto teórico, revisão da literatura relevante e estabeleceremos a estrutura do restante do artigo.
 
 Solução baseada em modelo U-NET usando como fonte de conhecimento o artigo "[Semantic Segmentation of Aerial Imagery Using U-Net in Python](https://towardsdatascience.com/semantic-segmentation-of-aerial-imagery-using-u-net-in-python-552705238514)" de Andrew Joseph Davies
 
@@ -61,6 +72,13 @@ https://www.kaggle.com/code/marciodelrei/drone-image-segmentation/edit
 
 ## Aerofotogrametria
 A aerofotogrametria é uma técnica de obtenção de informações do terreno ou superfície terrestre a partir de fotografias aéreas. Ela é utilizada para criar modelos digitais de superfície, mapas topográficos e ortofotos de áreas geográficas extensas, como cidades, florestas, rios, entre outros. A técnica envolve o uso de câmeras montadas em aeronaves, drones ou balões para capturar imagens aéreas do terreno. Em seguida, são aplicados algoritmos e técnicas de processamento de imagem para extrair informações geográficas e topográficas precisas e úteis para uma variedade de aplicações em engenharia, planejamento urbano, agricultura, meio ambiente, entre outras áreas.
+
+Através de técnicas de aerofotogrametria, é possível obter:
++ Ortofotos;
++ Modelo Digital de Superfície e de Terreno;
++ Curvas de Nível;
++ Cálculos Volumétricos.
+
 
 ## Softwares
 
