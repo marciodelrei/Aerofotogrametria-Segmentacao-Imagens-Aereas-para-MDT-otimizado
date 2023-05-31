@@ -166,6 +166,8 @@ Para abordagem, serão criados 2 modelos aczbaseados na arquitetura U-NET para i
 
 Após as inferências feitas, será um pós-processamento individual em cada um das máscaras geradas pela U-NET, convertendo as cores de cada pixel para preto ou branco respeitando a classificação de "não terreno" para anomalias, sendo estes pixels coloridos de preto e os pixels restantes de cada imagem serão considerados "terreno", sendo pintados de branco.
 
+-----------------------------------------------------------------------------------------------------------
+TODO
 ## Resultados {#resultados}
 Utilizaremos gráficos e outros recursos visuais para facilitar a compreensão dos dados. Faremos uma análise objetiva dos resultados e discutiremos sua relevância em relação ao objetivo do estudo.
 
@@ -175,9 +177,7 @@ Nesta seção, interpretaremos e discutiremos os resultados apresentados anterio
 ## Conclusão {#conclusão}
 Resumiremos as principais descobertas do estudo e destacaremos sua relevância em relação ao problema inicialmente proposto. Evitaremos repetir informações já apresentadas e forneceremos uma visão geral clara do trabalho realizado.
 
-## Referências {#referências}
-Listaremos todas as fontes citadas ao longo do artigo, seguindo o estilo de citação apropriado (por exemplo, APA, MLA, ABNT). Certificaremos de incluir todas as informações necessárias para que os leitores possam localizar as fontes.
-
+## Referências e Links
 ------------------------------------------------------------------------------------------------------------
 <p>Drone-Image-Segmentation</p>
 Drone Image Segmentation -U-Net architecture based on Manoj Gopalakrishna in Kaggle
@@ -188,10 +188,6 @@ Drone Image Segmentation -U-Net architecture based on Manoj Gopalakrishna in Kag
 [Manoj ](https://www.kaggle.com/code/manojgowda65/drone-image-segmentation-u-net-architecture)
 https://www.kaggle.com/code/marciodelrei/drone-image-segmentation/edit
 
-------------------------------------------------------------------------------
-
-
-## Referências e Links
 - [satellite-image-deep-learning](https://www.satellite-image-deep-learning.com) de Robin Cole. Deep learning applied to satellite imagery
 [Github](https://github.com/satellite-image-deep-learning)
 
