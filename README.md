@@ -5,10 +5,6 @@
   <img alt="intro02" src="https://www.ptatopografia.com.br/imagens/informacoes/empresas-aerofotogrametria-07.jpg" width="300" hspace="10" />
 </p>
 
-<p align="center">
-  <i>buscar fonte das imagens</i>
-</p>
-
 ## Índice
 1. [Resumo](#resumo)
 2. [Abstract](#abstract)
