@@ -1,8 +1,8 @@
 # Aerofotogrametria - Segmentação de Imagens Aéreas para MDT otimizado
 <p align="center">
-  <img alt="intro01" src="http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg" width="400" hspace="10" />
+  <img alt="intro01" src="http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg" width="280" hspace="10" />
   &nbsp;
-  <img alt="intro02" src="https://www.ptatopografia.com.br/imagens/informacoes/empresas-aerofotogrametria-07.jpg" width="400" hspace="10" />
+  <img alt="intro02" src="https://www.ptatopografia.com.br/imagens/informacoes/empresas-aerofotogrametria-07.jpg" width="300" hspace="10" />
 </p>
 
 <p align="center">
@@ -11,12 +11,15 @@
 
 ## Índice
 1. [Resumo](#resumo)
-2. [Introdução](#introdução)
-3. [Metodologia](#metodologia)
-4. [Resultados](#resultados)
-5. [Discussão](#discussão)
-6. [Conclusão](#conclusão)
-7. [Referências](#referências)
+2. [Abstract](#abstract)
+3. [Introdução](#introducao)
+4. [Conceitos](#conceitos)
+5. [Motivação](#motivacao)
+6. [Metodologia](#metodologia)
+7. [Resultados](#resultados)
+8. [Discussão](#discussao)
+9. [Conclusão](#conclusao)
+10. [Referências](#referencias)
 
 ## Resumo
 Ferramentas e aplicativos de Aerofotogrametria vêm crescendo e sendo usados como uma ótima alternativa para criação de modelos tridimensionais representando fielmente e virtualmente relevos reais. Dentre eles, Agisoft Metashape (antigo Agisoft Photoscan), Drone Deploy, Open Drone Map (ODM - foco deste experimento). Estes softwares se prevalecem de algoritmos de estereoscopia e triangulação de pontos conhecidos em amostras tomadas de pontos diferentes. O input destas operações, normalmente são muitas fotos do Local de Interesse. Estas operações resultam em produtos mensuráveis como Ortofotos e Modelo Digital do Terrenos em 3D, todos georrefenciados.
@@ -30,18 +33,141 @@ Aerophotogrammetry tools and applications have been growing in popularity and ar
 
 To enhance the accuracy and fidelity of the Digital Terrain Model representation, masks can be used to identify elements outside the Terrain spectrum, such as buildings, houses, vehicles, water bodies, and large green areas such as clusters of trees and forests. These masks are manually created using graphic editing software. This experiment focuses on the automatic construction of these masks using a conversion algorithm and Image Segmentation through the U-NET Network Architecture. Models will be created using different datasets and their respective annotations. The masks will then be reprocessed in ODM, and the results will serve as a comparative analysis for this experiment.
 
-## Introdução {#introdução}
-A técnica de Aerofotogrametria acelera o processo de estudos de relevo através do aerolevantamento feito por sensores remotos, neste caso 
+## Introdução
 
-Nesta seção, será introduzido o problema que está sendo abordado, apresentada sua relevância e explicado o objetivo do artigo. Além disso, forneceremos um contexto teórico, revisão da literatura relevante e estabeleceremos a estrutura do restante do artigo.
+A técnica de Aerofotogrametria acelera o processo de estudos de relevo através do aerolevantamento feito por sensores remotos, neste caso Drones ou Vants que capturam imagens normalmente de forma autônoma, seguindo um plano de vôo previamente estudado. Após coleta das fotos, softwares aplicam algoritmos para gerarem produtos como Ortofotos e Modelos Digitais de Superfície (MDS) que representam o relevo ou o Ponto de Interesse (POI). O MDS inclui a representação de todos elementos capturados como construções, casas, carros, etc - que serão tratados neste artigo como **anomalias**, além do terreno natural.
 
-Solução baseada em modelo U-NET usando como fonte de conhecimento o artigo "[Semantic Segmentation of Aerial Imagery Using U-Net in Python](https://towardsdatascience.com/semantic-segmentation-of-aerial-imagery-using-u-net-in-python-552705238514)" de Andrew Joseph Davies
+Com algoritmos embarcados nestes softwares, gera-se o Modelo Digital de Terreno (MDT), tais algoritmos buscam eliminar as anomalias citadas acima, através de triangulação e medição dos pontos tridimensionais gerados. Estes algoritmos entregam um produto muito bom quando bem parametrizados antes de seu processamento.
 
-## Metodologia {#metodologia}
-Descreveremos detalhadamente os métodos e procedimentos utilizados para resolver o problema. Explicaremos a abordagem adotada, as técnicas ou ferramentas empregadas, bem como a coleta e análise dos dados. Forneceremos informações suficientes para que outros pesquisadores possam reproduzir o estudo.
+## Motivação
+O software Open Drone Map ([ODM](https://community.opendronemap.org)) e outros mais, possuem capacidade de adicionar mascáras em preto/branco ([ODM Masks](https://docs.opendronemap.org/masks/)) para fotos antes de seu processamento identificando as anomalias em cada foto tomada e desta forma o processamento irá desconsiderar tais máscaras no momento da geração do MDT.
+
+As máscaras que identificam anomalias, devem ser criadas com editores gráficos (Ex.:[GIMP](https://www.gimp.org/)), de forma manual, artesanal e individualmente em cada foto, pintando de preto os pixels que representam as anomalias que devem ser excluídas do MDT.
+
+<p align="center">
+  <img alt="mask01" src="https://user-images.githubusercontent.com/1951843/93247037-ade87a00-f75b-11ea-8b42-25bc1d89279d.png" width="200" hspace="10" />
+  <img alt="mask01" src="https://user-images.githubusercontent.com/1951843/93247007-a2954e80-f75b-11ea-87b3-4f04bd1737b9.png" width="200" hspace="10" />
+</p>
+<p align="center">
+  <img alt="mask01" src="https://user-images.githubusercontent.com/1951843/93246970-8f827e80-f75b-11ea-8179-5a8fdd9f5193.png" width="400" hspace="10" />
+</p>
+<p align="center">
+    <a src="https://docs.opendronemap.org/masks/"><i>fonte: ODM - Using Image Masks</i></a>
+</p>
+Acima um exemplo da imagem original, com sua respectiva máscara e seu MDT processado.
+
+Isto em um pequeno dataset com até 20 imagens, apesar de ser extenuante é plausível, porém quando estamos diante de um dataset acima de 20 imagens, o que é normal em aplicações deste tipo, pois as imagens se recobrem em pelo menos 70%, torna-se impraticável.
+
+Este experimento terá como foco a técnica uma variação de Deep Learning conhecida como Segmentação de Imagens através da Arquitetura de Rede U-NET.
+
+Para um melhor entendimento do experimento, trago alguns conceitos de tecnologia e processos importantes que fazem parte deste experimento.
+
+## Conceitos
+Esta seção traz alguns conceitos e informações técnicas para melhor entendimento do experimento.
+
+### Aerofotogrametria
+A aerofotogrametria é uma técnica de obtenção de informações do terreno ou superfície terrestre a partir de fotografias aéreas. Ela é utilizada para criar modelos digitais de superfície, mapas topográficos e ortofotos de áreas geográficas extensas, como cidades, florestas, rios, entre outros. A técnica envolve o uso de câmeras montadas em aeronaves, drones ou balões para capturar imagens aéreas do terreno. Em seguida, são aplicados algoritmos e técnicas de processamento de imagem para extrair informações geográficas e topográficas precisas e úteis para uma variedade de aplicações em engenharia, planejamento urbano, agricultura, meio ambiente, entre outras áreas.
+
+Através de técnicas de aerofotogrametria, é possível obter:
++ Ortofotos;
++ Modelo Digital de Superfície e de Terreno;
++ Curvas de Nível;
++ Cálculos Volumétricos.
+
+### Segmentação de imagens
+Segmentação de imagens é uma tarefa de processamento de imagens que envolve a divisão de uma imagem em regiões ou segmentos significativos, onde cada segmento representa uma região semântica da imagem. O objetivo é separar as regiões de interesse da imagem de acordo com sua semântica, tornando mais fácil a análise e o processamento dessas regiões isoladamente. A segmentação de imagens é frequentemente usada em aplicações de visão computacional, como reconhecimento de objetos, análise de imagem médica e robótica.
+
+<p align="center">
+  <img alt="segim01" width=400 src= "https://miro.medium.com/v2/resize:fit:720/format:webp/1*kUrAUjDQ0zr1cegMvUrUqg.jpeg"/>
+  <img alt="segim02" width=400 src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*oypCvGATxpr4MJh-BM2TWw.png"/>
+</p>
+
+### Arquitetura U-Net
+![](https://miro.medium.com/v2/1*n1PFaorpCSvxiIaA2Ub1bA.png)
+
+A U-Net é uma arquitetura de rede neural convolucional desenvolvida para segmentação de imagem, que foi proposta em 2015 por Olaf Ronneberger, Philipp Fischer e Thomas Brox. O nome "U-Net" vem da forma da arquitetura, que se parece com a letra "U".
+
+A ideia por trás do U-Net é usar uma arquitetura de rede neural convolucional com camadas de "encoding" e "decoding" para segmentar imagens. A rede tem uma forma simétrica, com camadas de convolução para comprimir as informações da imagem e camadas de convolução transposta para expandir as informações e gerar uma máscara de segmentação para a imagem.
+
+O U-Net foi projetado para lidar com imagens médicas, onde a segmentação é necessária para a identificação precisa de estruturas como tumores e órgãos. No entanto, a arquitetura tem sido utilizada com sucesso em outras aplicações de segmentação de imagem, como segmentação de objetos em imagens de satélite e detecção de células em imagens de microscópio.
+
+Devido à sua eficácia em tarefas de segmentação de imagem, o U-Net tornou-se uma das arquiteturas mais populares e amplamente utilizadas em visão computacional e aprendizado profundo.
+
+A arquitetura U-Net pode ser considerada uma variação/extensão de um autoencoder, já que a sua estrutura é composta por um "encoder" que reduz a dimensão do espaço de características (representações) e um "decoder" que reconstrói a imagem original a partir dessas representações.
+
+No entanto, a U-Net possui uma diferença significativa em relação a um autoencoder convencional: a presença de caminhos de atalho (skip connections) que conectam camadas do encoder diretamente ao decoder. Esses caminhos de atalho permitem a preservação de informações de alta resolução do input original, o que ajuda a melhorar o desempenho da rede na tarefa de segmentação de imagens.
+
+Portanto, a U-Net pode ser considerada uma extensão do autoencoder convencional, que é projetado especificamente para tarefas de segmentação de imagens, onde a preservação da resolução espacial é fundamental.
+
+### MBRSC dataset (72 imagens e 6 classes)
+O MBRSC dataset está sob a licença CC0, disponível para [download](https://www.kaggle.com/humansintheloop/semantic-segmentation-of-aerial-imagery). Consiste em imagens aéreas de Dubait obtidas por MBRSC satélites e anotadas manualmente com segmentação semântica pixel a pixel em 6 classes. Existem três desafios principais associados ao conjunto de dados:
+
+1. As cores das classes são hexadecimais, enquanto as imagens das máscaras são RGB.
+2. O volume total do conjunto de dados é de 72 imagens agrupadas em seis blocos maiores. Setenta e duas imagens é um conjunto de dados relativamente pequeno para treinar uma rede neural.
+3. Cada ladrilho tem imagens de diferentes alturas e larguras, e algumas imagens dentro dos mesmos ladrilhos variam em tamanho. O modelo de rede neural espera entradas com dimensões espaciais iguais.
+
+![](https://miro.medium.com/v2/1*X0if3zq8fBrgr5YvpluaRw.png)
+
+### Aerial Semantic Segmentation Drone Dataset (400 imagens e 24 classes)
+<p align="center">
+  <img alt="segim01" width=400 src= "https://www.tugraz.at/fileadmin/_migrated/pics/fyler3.png"/>
+</p>
+O Semantic Drone dataset está disponível [aqui](https://www.tugraz.at/index.php?id=22387) ou [aqui](https://www.kaggle.com/datasets/bulentsiyah/semantic-drone-dataset).
+
+O Semantic Drone Dataset concentra-se na compreensão semântica de cenas urbanas para aumentar a segurança dos procedimentos autônomos de voo e pouso de drones. As imagens retratam mais de 20 casas de nadir (vista aérea) adquiridas a uma altitude de 5 a 30 metros acima do solo. Uma câmera de alta resolução foi usada para adquirir imagens em um tamanho de 6000x4000px (24Mpx). O conjunto de treinamento contém 400 imagens disponíveis publicamente.
+
+Classes:
+<table>
+  <tr>
+    <td>tree</td>
+    <td>grass</td>
+    <td>other vegetation</td>
+    <td>dirt</td>
+    <td>gravel</td>
+  </tr>
+  <tr>
+    <td>rocks</td>
+    <td>water</td>
+    <td>paved area</td>
+    <td>pool</td>
+    <td>person</td>
+  </tr>
+    <tr>
+    <td>dog</td>
+    <td>car</td>
+    <td>bicycle</td>
+    <td>roof</td>
+    <td>wall</td>
+  </tr>
+  <tr>
+    <td>fence</td>
+    <td>fence-pole</td>
+    <td>window</td>
+    <td>door</td>
+    <td>obstacle</td>
+  </tr>
+</table>
+Fonte: [Graz University of Technology - http://dronedataset.icg.tugraz.at](http://dronedataset.icg.tugraz.at)
+
+Licença:
+O Drone Dataset é disponibilizado gratuitamente para entidades acadêmicas e não acadêmicas para fins não comerciais, como pesquisa acadêmica, ensino, publicações científicas ou experimentação pessoal. A permissão é concedida para usar os dados desde que você concorde:
+
+- Que o conjunto de dados vem "AS-IS", sem garantia expressa ou implícita. Embora todos os esforços tenham sido feitos para garantir a precisão, nós (Graz University of Technology) não aceitamos qualquer responsabilidade por erros ou omissões.
+- Que você inclua uma referência ao "Semantic Drone Dataset" em qualquer trabalho que faça uso do conjunto de dados. Para trabalhos de pesquisa ou outro link de mídia para a página da web Semantic Drone Dataset.
+- Que você não distribua este conjunto de dados ou versões modificadas. É permitido distribuir trabalhos derivados desde que sejam representações abstratas deste conjunto de dados (como modelos treinados nele ou anotações adicionais que não incluam diretamente nenhum de nossos dados) e não permitam recuperar o conjunto de dados ou algo semelhante em personagem.
+- Que você não pode usar o conjunto de dados ou qualquer trabalho derivado para fins comerciais como, por exemplo, licenciar ou vender os dados ou usar os dados com o objetivo de obter um ganho comercial.
+- Que todos os direitos não expressamente concedidos a você são reservados por nós (Graz University of Technology).
+
+
+## Metodologia
+A metodologia para geração das máscaras, serão baseados em algoritmos de aprendizado de máquina, mais precisamente redes neurais convolucionais. A função e treinar um modelo capaz de detectar automaticamente os objetos de interesse na imagem. Esse modelo pode ser treinado com imagens anotadas manualmente que indiquem a localização desses objetos na imagem. Dessa forma, o modelo pode aprender padrões específicos associados a cada tipo de objeto e ser capaz de detectá-los com maior precisão.
+
+Para abordagem, serão criados 2 modelos aczbaseados na arquitetura U-NET para inferências, para cada modelos serão usados 2 datasets de imagens com suas respectivas máscaras anotadas. Um dataset com 72 imagens possuindo 6 classes anotadas e outro dataset com 400 imagens com 24 classes anotadas.
+
+Após as inferências feitas, será um pós-processamento individual em cada um das máscaras geradas pela U-NET, convertendo as cores de cada pixel para preto ou branco respeitando a classificação de "não terreno" para anomalias, sendo estes pixels coloridos de preto e os pixels restantes de cada imagem serão considerados "terreno", sendo pintados de branco.
 
 ## Resultados {#resultados}
-Apresentaremos os resultados obtidos em relação ao problema em questão. Utilizaremos tabelas, gráficos ou outros recursos visuais para facilitar a compreensão dos dados. Faremos uma análise objetiva dos resultados e discutiremos sua relevância em relação ao objetivo do estudo.
+Utilizaremos gráficos e outros recursos visuais para facilitar a compreensão dos dados. Faremos uma análise objetiva dos resultados e discutiremos sua relevância em relação ao objetivo do estudo.
 
 ## Discussão {#discussão}
 Nesta seção, interpretaremos e discutiremos os resultados apresentados anteriormente. Analisaremos as descobertas à luz da literatura existente, destacando semelhanças, diferenças e contribuições para a área de estudo. Discutiremos também as limitações do estudo e possíveis direções para pesquisas futuras.
@@ -64,87 +190,6 @@ https://www.kaggle.com/code/marciodelrei/drone-image-segmentation/edit
 
 ------------------------------------------------------------------------------
 
-## Introdução
-<!-- 
-![intro01](http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg) -->
-
-
-
-## Aerofotogrametria
-A aerofotogrametria é uma técnica de obtenção de informações do terreno ou superfície terrestre a partir de fotografias aéreas. Ela é utilizada para criar modelos digitais de superfície, mapas topográficos e ortofotos de áreas geográficas extensas, como cidades, florestas, rios, entre outros. A técnica envolve o uso de câmeras montadas em aeronaves, drones ou balões para capturar imagens aéreas do terreno. Em seguida, são aplicados algoritmos e técnicas de processamento de imagem para extrair informações geográficas e topográficas precisas e úteis para uma variedade de aplicações em engenharia, planejamento urbano, agricultura, meio ambiente, entre outras áreas.
-
-Através de técnicas de aerofotogrametria, é possível obter:
-+ Ortofotos;
-+ Modelo Digital de Superfície e de Terreno;
-+ Curvas de Nível;
-+ Cálculos Volumétricos.
-
-
-## Softwares
-
-## MDT - Modelo Digital de Terreno
-
-## MDS - Modelo Digital de Superfície
-
-## Visão Geral dos algoritmos de geração 3D de Superfície (MDS) e Terrenos (MDT)
-
-## Problema
-Softwares de aerofotogrametria possuem algoritmos para identificar alterações altimétricas no Modelo Digital de Superfície (MDS) para criação de Modelos Digitais de Terreno (MDT), excluindo construções, casas, prédios, árvores de grande porte, carros e automóveis em geral. Isto para se obter um perfil mais preciso do Terreno. Estes algoritmos, apesar de satisfatórios, não são precisos, uma vez que buscam distâncias e ângulos de pontos tridimensionais para identificar estes elementos.
-
-## Abordagem e Estudos para melhoria de resultados
-Uma abordagem possível para melhorar a precisão dos algoritmos de identificação de alterações altimétricas no MDS seria utilizar técnicas de processamento de imagens que permitam a detecção automática de objetos específicos (como construções, casas, prédios, árvores e carros) na imagem. Essas técnicas podem incluir segmentação de imagem, classificação de objetos, detecção de bordas e outras técnicas de processamento de imagem.
-
-Uma possibilidade seria utilizar algoritmos de aprendizado de máquina, como redes neurais convolucionais, para treinar um modelo capaz de detectar automaticamente os objetos de interesse na imagem. Esse modelo pode ser treinado com imagens rotuladas manualmente que indiquem a localização desses objetos na imagem. Dessa forma, o modelo pode aprender padrões específicos associados a cada tipo de objeto e ser capaz de detectá-los com maior precisão.
-
-### Segmentação de imagens
-Segmentação de imagens é uma tarefa de processamento de imagens que envolve a divisão de uma imagem em regiões ou segmentos significativos, onde cada segmento representa uma região semântica da imagem. O objetivo é separar as regiões de interesse da imagem de acordo com sua semântica, tornando mais fácil a análise e o processamento dessas regiões isoladamente. A segmentação de imagens é frequentemente usada em aplicações de visão computacional, como reconhecimento de objetos, análise de imagem médica e robótica.
-
-<p align="center">
-  <img alt="segim01" width=400 src= "https://miro.medium.com/v2/resize:fit:720/format:webp/1*kUrAUjDQ0zr1cegMvUrUqg.jpeg"/>
-  <img alt="segim02" width=400 src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*oypCvGATxpr4MJh-BM2TWw.png"/>
-</p>
-
-### U-Net
-O modelo U-Net é uma arquitetura de rede neural convolucional desenvolvida para segmentação de imagem, que foi proposta em 2015 por Olaf Ronneberger, Philipp Fischer e Thomas Brox. O nome "U-Net" vem da forma da arquitetura, que se parece com a letra "U".
-
-A ideia por trás do U-Net é usar uma arquitetura de rede neural convolucional com camadas de "encoding" e "decoding" para segmentar imagens. A rede tem uma forma simétrica, com camadas de convolução para comprimir as informações da imagem e camadas de convolução transposta para expandir as informações e gerar uma máscara de segmentação para a imagem.
-
-O U-Net foi projetado para lidar com imagens médicas, onde a segmentação é necessária para a identificação precisa de estruturas como tumores e órgãos. No entanto, a arquitetura tem sido utilizada com sucesso em outras aplicações de segmentação de imagem, como segmentação de objetos em imagens de satélite e detecção de células em imagens de microscópio.
-
-Devido à sua eficácia em tarefas de segmentação de imagem, o U-Net tornou-se uma das arquiteturas mais populares e amplamente utilizadas em visão computacional e aprendizado profundo.
-
-A arquitetura U-Net pode ser considerada uma variação/extensão de um autoencoder, já que a sua estrutura é composta por um "encoder" que reduz a dimensão do espaço de características (representações) e um "decoder" que reconstrói a imagem original a partir dessas representações.
-
-No entanto, a U-Net possui uma diferença significativa em relação a um autoencoder convencional: a presença de caminhos de atalho (skip connections) que conectam camadas do encoder diretamente ao decoder. Esses caminhos de atalho permitem a preservação de informações de alta resolução do input original, o que ajuda a melhorar o desempenho da rede na tarefa de segmentação de imagens.
-
-Portanto, a U-Net pode ser considerada uma extensão do autoencoder convencional, que é projetado especificamente para tarefas de segmentação de imagens, onde a preservação da resolução espacial é fundamental.
-
-**U-Net Arquitetura**
-U-Net consists of two critical paths:
-
-    Contraction corresponds to general convolution Conv2D operations, where filters slide across the input image extracting features.
-    Following Conv2D, the MaxPooling2D layer operates on groups of pixels and filters values by selecting the maximum. Pooling downsamples the input image size while maintaining feature information.
-    Expansion: the downsampled image expands using transpose convolutions or deconvolutions, Conv2DTranspose, to recover the input image spatial information. While upsampling, skip connections concatenate the features between the symmetric contraction and expansion layers.
-![](https://miro.medium.com/v2/1*n1PFaorpCSvxiIaA2Ub1bA.png)
-
-### Segmentation Anything da Meta
-
-## Modelos
-
-### Modelo pré-treinado
-The MBRSC dataset exists under the CC0 license, available to [download](https://www.kaggle.com/humansintheloop/semantic-segmentation-of-aerial-imagery). It consists of aerial imagery of Dubai obtained by MBRSC satellites and annotated with pixel-wise semantic segmentation in 6 classes. There are three main challenges associated with the dataset:
- 
-1.     Class colours are in hex, whilst the mask images are in RGB.
-2.     The total volume of the dataset is 72 images grouped into six larger tiles. Seventy-two images is a relatively small dataset for training a neural network.
-3.     Each tile has images of different heights and widths, and some pictures within the same tiles are variable in size. The neural network model expects inputs with equal spatial dimensions.
-
-![](https://miro.medium.com/v2/1*X0if3zq8fBrgr5YvpluaRw.png)
-
-### Modelo customizado com dados do próprio dataset
-## Conclusão
-Due to limited computing power, the neural network size was restricted, and training iterations did not exceed 20 epochs. Currently, there are around 1.4 million trainable parameters, as shown in Figure 6. Therefore, model performance can undoubtedly be improved by hyperparameter tuning and employing a more sophisticated network.
-
-Figure 9 depicts some of the least successful segmentations. Some similarities are noticeable in the left-most column of aerial images. Each image is very bright, containing many pixels towards the white end of the RGB spectrum. Comparably, inspecting Figure 8, the most acceptable segmentations are on higher contrasted images. Therefore, it may be reasonable to synthesise additional brighter training images or fine-tune the model on a subset to improve performance.
 
 ## Referências e Links
 - [satellite-image-deep-learning](https://www.satellite-image-deep-learning.com) de Robin Cole. Deep learning applied to satellite imagery
@@ -154,3 +199,5 @@ Figure 9 depicts some of the least successful segmentations. Some similarities a
 [Github](https://github.com/satellite-image-deep-learning)
 
 - [MBRSC dataset](https://www.kaggle.com/humansintheloop/semantic-segmentation-of-aerial-imagery)
+
+Solução baseada em modelo U-NET usando como fonte de conhecimento o artigo "[Semantic Segmentation of Aerial Imagery Using U-Net in Python](https://towardsdatascience.com/semantic-segmentation-of-aerial-imagery-using-u-net-in-python-552705238514)" de Andrew Joseph Davies
