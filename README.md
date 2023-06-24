@@ -167,6 +167,11 @@ TODO
 ## Resultados {#resultados}
 Utilizaremos gráficos e outros recursos visuais para facilitar a compreensão dos dados. Faremos uma análise objetiva dos resultados e discutiremos sua relevância em relação ao objetivo do estudo.
 
+https://skfb.ly/oIsHv
+
+<div class="sketchfab-embed-wrapper"> <iframe title="TCC PUC BI Master ORIGINAL" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2d5837cb0c2c454193ea2e3fb963a598/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/tcc-puc-bi-master-original-2d5837cb0c2c454193ea2e3fb963a598?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> TCC PUC BI Master ORIGINAL </a> by <a href="https://sketchfab.com/marcio.delrei?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> marcio.delrei </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+
+
 ## Discussão {#discussão}
 Nesta seção, interpretaremos e discutiremos os resultados apresentados anteriormente. Analisaremos as descobertas à luz da literatura existente, destacando semelhanças, diferenças e contribuições para a área de estudo. Discutiremos também as limitações do estudo e possíveis direções para pesquisas futuras.
 
