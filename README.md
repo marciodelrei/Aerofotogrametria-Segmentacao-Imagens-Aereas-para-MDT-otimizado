@@ -174,12 +174,13 @@ Conforme citado, produtos interessantes podem gerados e como exemplo foi exposto
   <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDS_processado.jpg">
 </p>
 
-Como resultado, comparamos o MDT gerado pelos 2 processamentos A -> Sem máscaras e B -> com Máscaras inferidas pela IA:
+Como resultado, comparamos o MDT gerado pelos 2 processamentos Imagens Sem máscaras e Imagens com Máscaras inferidas pela IA:
+<p align="center">
+  <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDS_compare.gif">
+</p>
 
-Neste 
-
-<div class="sketchfab-embed-wrapper"> <iframe title="TCC PUC BI Master ORIGINAL" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2d5837cb0c2c454193ea2e3fb963a598/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/tcc-puc-bi-master-original-2d5837cb0c2c454193ea2e3fb963a598?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> TCC PUC BI Master ORIGINAL </a> by <a href="https://sketchfab.com/marcio.delrei?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> marcio.delrei </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
-
+A imagem acima demonstra uma alteração sutil entre os MDT's, porém isto já indica que o mascaramento influencia em sua geração.
+Abaixo geramos curvas de nível que representam o terreno e fica um pouco mais claro esta diferença, onde cores azuis demontram o MDT Sem máscaras e linha magenta representa o MDT com máscaras IA, comprovando a eliminação de anomalias.
 
 ## Discussão {#discussão}
 Nesta seção, interpretaremos e discutiremos os resultados apresentados anteriormente. Analisaremos as descobertas à luz da literatura existente, destacando semelhanças, diferenças e contribuições para a área de estudo. Discutiremos também as limitações do estudo e possíveis direções para pesquisas futuras.
