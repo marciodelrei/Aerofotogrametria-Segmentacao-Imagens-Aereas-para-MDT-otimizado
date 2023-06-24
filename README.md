@@ -1,4 +1,4 @@
-# Aerofotogrametria - Segmentação de Imagens Aéreas para MDT otimizado
+![image](https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/assets/7377875/ea849491-7a72-48b9-ae23-19279fa32b48)# Aerofotogrametria - Segmentação de Imagens Aéreas para MDT otimizado
 <p align="center">
   <img alt="intro01" src="http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg" width="280" hspace="10" />
   &nbsp;
@@ -161,7 +161,7 @@ O Drone Dataset é disponibilizado gratuitamente para entidades acadêmicas e n�
 A metodologia para geração das máscaras, serão baseados em algoritmos de aprendizado de máquina, mais precisamente redes neurais convolucionais. A função e treinar um modelo capaz de detectar automaticamente os elementos de *des*interesse na imagem. Esse modelo foi treinado com imagens anotadas manualmente que indiquem a localização desses objetos na imagem. Dessa forma, o modelo pode aprender padrões específicos associados a cada tipo de elemento e ser capaz de detectá-los com maior precisão.
 
 Para abordagem, foi criado um modelo baseados na arquitetura U-NET para inferências.Foi usado um dataset possuindo 400 imagens e suas respectivas imagens com 24 classes anotadas.
-O script hospedado no Kaggle sob o link: , mostra o treinamento do modelo. Uma cópia do notebook foi colocada neste repositório para fácil acesso sob o nome: .
+O script hospedado no Kaggle sob o link: [aerial-semantic-segmentation-puc-rio-bi-master-tcc.ipynb](https://www.kaggle.com/code/marciodelrei/aerial-semantic-segmentation-puc-rio-bi-master-tcc?kernelSessionId=134697143), mostra o treinamento do modelo. Uma cópia do notebook foi colocada neste repositório para fácil acesso sob o nome: aerial-semantic-segmentation-puc-rio-bi-master-tcc.ipynb. Ele está com o output, tornando-se pesado para renderização no view do Github.
 
 Após as inferências feitas, um pós-processamento foi aplicado em cada um das máscaras geradas pela U-NET, convertendo as cores de cada pixel para preto ou branco respeitando a classificação de "não terreno" para anomalias, sendo estes pixels coloridos de preto e os pixels restantes de cada imagem, considerados "terreno", sendo pintados de branco.
 O script de inferência foi feito em máquina local e uma cópia foi do notebook foi colocada neste repositório para fácil acesso sob o nome: [model_inference.ipynb](https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/model_inference.ipynb).
@@ -169,7 +169,15 @@ O script de inferência foi feito em máquina local e uma cópia foi do notebook
 Foi utilizado um dataset não conhecido do modelo de IA para efeitos comparativos. Dois processamentos foram feitos no ODM com os mesmos parâmentros. A diferença foi que no primeiro processamento, foram utilizadas somente as imagens originais e no outro foram adicionadas as máscaras para serem analisadas e observadas para que a comparação resultante fosse criada.
 
 ## Resultados {#resultados}
-Neste https://skfb.ly/oIsHv
+Conforme citado, produtos interessantes podem gerados e como exemplo foi exposto no Skecthfab o Modelo Digital de Superfície para apreciação:
+<p align="center">
+  <img alt="segim01" width=400 src= "./MDS_Processado.jpg">
+</p>
+
+[MDS no Sketchfab](https://skfb.ly/oIsHv)
+
+Como resultado, comparamos o MDT gerado pelos 2 processamentos A -> Sem máscaras e B -> com Máscaras inferidas pela IA.
+Neste 
 
 <div class="sketchfab-embed-wrapper"> <iframe title="TCC PUC BI Master ORIGINAL" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2d5837cb0c2c454193ea2e3fb963a598/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/tcc-puc-bi-master-original-2d5837cb0c2c454193ea2e3fb963a598?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> TCC PUC BI Master ORIGINAL </a> by <a href="https://sketchfab.com/marcio.delrei?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> marcio.delrei </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
 
