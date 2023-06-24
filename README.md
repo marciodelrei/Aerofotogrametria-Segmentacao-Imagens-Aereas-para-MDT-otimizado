@@ -164,7 +164,7 @@ Para abordagem, foi criado um modelo baseados na arquitetura U-NET para inferên
 O script hospedado no Kaggle sob o link: , mostra o treinamento do modelo. Uma cópia do notebook foi colocada neste repositório para fácil acesso sob o nome: .
 
 Após as inferências feitas, um pós-processamento foi aplicado em cada um das máscaras geradas pela U-NET, convertendo as cores de cada pixel para preto ou branco respeitando a classificação de "não terreno" para anomalias, sendo estes pixels coloridos de preto e os pixels restantes de cada imagem, considerados "terreno", sendo pintados de branco.
-O script de inferência foi feito em máquina local e uma cópia foi do notebook foi colocada neste repositório para fácil acesso sob o nome: .
+O script de inferência foi feito em máquina local e uma cópia foi do notebook foi colocada neste repositório para fácil acesso sob o nome: [model_inference.ipynb](https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/model_inference.ipynb).
 
 Foi utilizado um dataset não conhecido do modelo de IA para efeitos comparativos. Dois processamentos foram feitos no ODM com os mesmos parâmentros. A diferença foi que no primeiro processamento, foram utilizadas somente as imagens originais e no outro foram adicionadas as máscaras para serem analisadas e observadas para que a comparação resultante fosse criada.
 
