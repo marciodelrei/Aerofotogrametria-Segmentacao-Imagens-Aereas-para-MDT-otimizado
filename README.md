@@ -203,8 +203,8 @@ A imagem acima demonstra uma alteração sutil entre os MDT's, porém isto já i
 Abaixo geramos curvas de nível que representam o terreno e fica um pouco mais claro esta diferença, onde cores azuis demontram o MDT Sem máscaras e linha magenta representa o MDT com máscaras IA, comprovando a eliminação de anomalias.
 
 <p align="center">
-  <img alt="MDT sem máscaras IA- Curvas de nível de 1m" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_CN1m_SemMascara.png" width="400" hspace="10" />
-  <img alt="MDT com máscaras IA - Curvas de nível de 1m" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_CN1m_ComMascara.png" width="400" hspace="10" />
+  <img alt="MDT sem máscaras IA- Curvas de nível de 1m" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_CN1m_SemMascara.png" width="380" hspace="10" />
+  <img alt="MDT com máscaras IA - Curvas de nível de 1m" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_CN1m_ComMascara.png" width="380" hspace="10" />
 </p>
 <p align="center">
   <img alt="MDT comparativo" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_CN1m_Comparativo.png" width="800" hspace="10" />
