@@ -174,9 +174,14 @@ Conforme citado, produtos interessantes podem gerados e como exemplo foi exposto
   <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDS_processado.jpg">
 </p>
 
+Os parâmetros nos processamento dos MDT's foram os mesmos:
+<p align="center">
+  <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/Painel%20-%20WebODM.png">
+</p>
+
 Como resultado, comparamos o MDT gerado pelos 2 processamentos Imagens Sem máscaras e Imagens com Máscaras inferidas pela IA:
 <p align="center">
-  <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDS_compare.gif">
+  <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_compare.gif">
 </p>
 
 A imagem acima demonstra uma alteração sutil entre os MDT's, porém isto já indica que o mascaramento influencia em sua geração.
