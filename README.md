@@ -1,4 +1,4 @@
-![image](https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/assets/7377875/ea849491-7a72-48b9-ae23-19279fa32b48)# Aerofotogrametria - Segmentação de Imagens Aéreas para MDT otimizado
+# Aerofotogrametria - Segmentação de Imagens Aéreas para MDT otimizado
 <p align="center">
   <img alt="intro01" src="http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg" width="280" hspace="10" />
   &nbsp;
@@ -171,7 +171,7 @@ Foi utilizado um dataset não conhecido do modelo de IA para efeitos comparativo
 ## Resultados {#resultados}
 Conforme citado, produtos interessantes podem gerados e como exemplo foi exposto no Skecthfab o Modelo Digital de Superfície para apreciação:
 <p align="center">
-  <img alt="segim01" width=400 src= "./MDS_Processado.jpg">
+  <img alt="segim01" width=400 src= "MDS_Processado.jpg">
 </p>
 
 [MDS no Sketchfab](https://skfb.ly/oIsHv)
