@@ -1,5 +1,11 @@
+<p align="center">
+  <img alt="TCC Bi Master" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/header.jpg" />
+</p>
+
 Trabalho de final de curso PUC-Rio BI MASTER
+
 Autor: Márcio d'El-Rei (marcio.delrei@gmail.com)
+
 Orientadora: Prof DSc Manoela Kohler
 __________________________________________________________________________________________________
 
