@@ -168,7 +168,7 @@ O script de inferência foi feito em máquina local e uma cópia foi do notebook
 
 Foi utilizado um dataset não conhecido do modelo de IA para efeitos comparativos. Dois processamentos foram feitos no ODM com os mesmos parâmentros. A diferença foi que no primeiro processamento, foram utilizadas somente as imagens originais e no outro foram adicionadas as máscaras para serem analisadas e observadas para que a comparação resultante fosse criada.
 
-## Resultados {#resultados}
+## Resultados
 Conforme citado, produtos interessantes podem gerados e como exemplo foi exposto no Skecthfab o Modelo Digital de Superfície para apreciação: [MDS no Sketchfab](https://skfb.ly/oIsHv)
 <p align="center">
   <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDS_processado.jpg">
