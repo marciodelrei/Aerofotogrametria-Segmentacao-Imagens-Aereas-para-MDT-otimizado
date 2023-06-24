@@ -185,15 +185,23 @@ Como resultado, comparamos o MDT gerado pelos 2 processamentos Imagens Sem másc
 </p>
 
 A imagem acima demonstra uma alteração sutil entre os MDT's, porém isto já indica que o mascaramento influencia em sua geração.
+
 Abaixo geramos curvas de nível que representam o terreno e fica um pouco mais claro esta diferença, onde cores azuis demontram o MDT Sem máscaras e linha magenta representa o MDT com máscaras IA, comprovando a eliminação de anomalias.
 
-## Discussão {#discussão}
-Nesta seção, interpretaremos e discutiremos os resultados apresentados anteriormente. Analisaremos as descobertas à luz da literatura existente, destacando semelhanças, diferenças e contribuições para a área de estudo. Discutiremos também as limitações do estudo e possíveis direções para pesquisas futuras.
+<p align="center">
+  <img alt="MDT sem máscaras IA- Curvas de nível de 1m" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_CN1m_SemMascara.png" width="200" hspace="10" />
+  <img alt="MDT com máscaras IA - Curvas de nível de 1m" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_CN1m_ComMascara.png" width="200" hspace="10" />
+</p>
+<p align="center">
+  <img alt="MDT comparativo" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_CN1m_Comparativo.png" width="400" hspace="10" />
+</p>
 
-## Conclusão {#conclusão}
-Resumiremos as principais descobertas do estudo e destacaremos sua relevância em relação ao problema inicialmente proposto. Evitaremos repetir informações já apresentadas e forneceremos uma visão geral clara do trabalho realizado.
+## Conclusão
+Com a apresentação dos resultados, mesmo que sejam sutis, a injestão de máscaras para processamento sensibilizam os algoritmos de geração de MDT. A criação de modelos de Segmentação Semântica de Imagens com auxílio de IA pode economizam tempo na geração de máscaras que detectam anomalias. Ao analisarmos as saídas do algoritmo do Kaggle do modelo, vemos que muitas imagens anotadas são necesárias para que possamos melhorar a acurácia do modelo de IA. A realização do treinamento do modelo de IA com datasets anotados com cenários regionais, provavelmete ajudarão o modelo nas inferências.
 
-## Referências e Links
+A utilização de modelos pré-treinados como o SAM (Segment Anything Model) do Facebook, por exemplo, não foram testados e podem ser utilizados para trabalho futuro em cima dos algoritmos aqui apresentados, com as devidas alterações para seu pleno funcionamento.
+
+## Referências e Links interessantes
 ------------------------------------------------------------------------------------------------------------
 <p>Drone-Image-Segmentation</p>
 Drone Image Segmentation -U-Net architecture based on Manoj Gopalakrishna in Kaggle
@@ -212,4 +220,7 @@ https://www.kaggle.com/code/marciodelrei/drone-image-segmentation/edit
 
 - [MBRSC dataset](https://www.kaggle.com/humansintheloop/semantic-segmentation-of-aerial-imagery)
 
-Solução baseada em modelo U-NET usando como fonte de conhecimento o artigo "[Semantic Segmentation of Aerial Imagery Using U-Net in Python](https://towardsdatascience.com/semantic-segmentation-of-aerial-imagery-using-u-net-in-python-552705238514)" de Andrew Joseph Davies
+- Solução baseada em modelo U-NET usando como fonte de conhecimento o artigo "[Semantic Segmentation of Aerial Imagery Using U-Net in Python](https://towardsdatascience.com/semantic-segmentation-of-aerial-imagery-using-u-net-in-python-552705238514)" de Andrew Joseph Davies
+
+- [SAM - Segment Anythin Model. Facebook] (https://github.com/facebookresearch/segment-anything)
+
