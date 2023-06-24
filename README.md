@@ -171,7 +171,7 @@ Foi utilizado um dataset não conhecido do modelo de IA para efeitos comparativo
 ## Resultados {#resultados}
 Conforme citado, produtos interessantes podem gerados e como exemplo foi exposto no Skecthfab o Modelo Digital de Superfície para apreciação:
 <p align="center">
-  <img alt="mds" width=400 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDS_processado.jpg">
+  <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDS_processado.jpg">
 </p>
 
 [MDS no Sketchfab](https://skfb.ly/oIsHv)
