@@ -169,14 +169,13 @@ O script de inferência foi feito em máquina local e uma cópia foi do notebook
 Foi utilizado um dataset não conhecido do modelo de IA para efeitos comparativos. Dois processamentos foram feitos no ODM com os mesmos parâmentros. A diferença foi que no primeiro processamento, foram utilizadas somente as imagens originais e no outro foram adicionadas as máscaras para serem analisadas e observadas para que a comparação resultante fosse criada.
 
 ## Resultados {#resultados}
-Conforme citado, produtos interessantes podem gerados e como exemplo foi exposto no Skecthfab o Modelo Digital de Superfície para apreciação:
+Conforme citado, produtos interessantes podem gerados e como exemplo foi exposto no Skecthfab o Modelo Digital de Superfície para apreciação: [MDS no Sketchfab](https://skfb.ly/oIsHv)
 <p align="center">
   <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDS_processado.jpg">
 </p>
 
-[MDS no Sketchfab](https://skfb.ly/oIsHv)
+Como resultado, comparamos o MDT gerado pelos 2 processamentos A -> Sem máscaras e B -> com Máscaras inferidas pela IA:
 
-Como resultado, comparamos o MDT gerado pelos 2 processamentos A -> Sem máscaras e B -> com Máscaras inferidas pela IA.
 Neste 
 
 <div class="sketchfab-embed-wrapper"> <iframe title="TCC PUC BI Master ORIGINAL" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2d5837cb0c2c454193ea2e3fb963a598/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/tcc-puc-bi-master-original-2d5837cb0c2c454193ea2e3fb963a598?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> TCC PUC BI Master ORIGINAL </a> by <a href="https://sketchfab.com/marcio.delrei?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> marcio.delrei </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
