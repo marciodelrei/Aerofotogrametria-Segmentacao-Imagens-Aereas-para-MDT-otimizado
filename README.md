@@ -18,22 +18,32 @@
 10. [Referências](#referencias)
 
 ## Resumo
-Ferramentas e aplicativos de Aerofotogrametria vêm crescendo e sendo usados como uma ótima alternativa para criação de modelos tridimensionais representando fielmente e virtualmente relevos reais. Dentre eles, Agisoft Metashape (antigo Agisoft Photoscan), Drone Deploy, Open Drone Map (ODM - foco deste experimento). Estes softwares se prevalecem de algoritmos de estereoscopia e triangulação de pontos conhecidos em amostras tomadas de pontos diferentes. O input destas operações, normalmente são muitas fotos do Local de Interesse. Estas operações resultam em produtos mensuráveis como Ortofotos e Modelo Digital do Terrenos em 3D, todos georrefenciados.
+Ferramentas e aplicativos de Aerofotogrametria vêm ganhando popularidade e sendo usados como uma ótima alternativa para criação de modelos tridimensionais representando fielmente e virtualmente relevos reais. Dentre eles, Agisoft Metashape (antigo Agisoft Photoscan), Drone Deploy, Open Drone Map (ODM - foco deste experimento). Estes softwares fazem uso de algoritmos de técnicas de fotogrametria e triangulação de pontos conhecidos em amostras tomadas de pontos consecutivos, diferentes e com pequenos intervalos de tempo, feito normalmente por VANTS (ex. drones multirrotores). O input destas operações, normalmente são muitas fotos da Área de Interesse. Tais operações resultam em produtos mensuráveis como por exemplo Ortofotos e Modelo Digital do Terrenos em 3D, todos georrefenciados.
 
-Para melhorar a precisão do Modelo Digital do Terreno e torná-lo mais fiel em sua representação digital, há possibilidade de se utilizar máscaras, criadas manulamente com editores gráficos, que identificam elementos fora do espectro de Terreno, como casas, construções, carros, cursos e espelhos d'água, grandes massas verdes como aglomerados de árvores e florestas. Este experimento foca na construção automática destas máscaras através de algoritmo conversor e da Segmentação de Imagens através da Aquitetura de Rede U-NET, onde serão criados modelos usando datasets diferentes com suas respectivas anotações. As máscaras serão reprocessadas nos ODM e seus resultados servirão de comparativo como produto deste experimento.
+Para melhorar a precisão do Modelo Digital do Terreno e torná-lo mais fiel em sua representação digital, além de pós processamentos baseados em medições de GPS e outros, há possibilidade de se utilizar máscaras, criadas manulamente com editores gráficos, que identificam elementos fora do espectro de Terreno Natural, como casas, construções, carros, cursos e espelhos d'água, grandes massas verdes como aglomerados de árvores e florestas. Este experimento focou na construção automática destas máscaras com técnicas de Inteligência Artificial, mais precisamente o Aprendizado Profundo (Deep Learning em inglês). A técnica utilizada foi a Segmentação de Imagens através da Aquitetura de Rede U-NET, onde foi criado um modelo usando dataset com 400 imagens diferentes e suas respectivas anotações, classificando cada pixel das imagens. 
+
+Após criação do modelo de IA (obteve 86% de acurácia com o dataset de validação, indicando que mais imagens anotadas são necessárias para melhoria do modelo de IA), foi usado um dataset desconhecido do modelo para inferência. Para mensurar o ganho com da aplicação das máscaras geradas por IA, foram feitos dois processamentos do dataset não conhecido pelo modelo com o software ODM usando os mesmos parâmetros. A diferença entre os processamentos foi a inclusão das mácaras geradas pela IA no segundo processamento para comparação e avaliação do experimento.
+
+Como resultado, foram identificadas pequenas áreas no Modelo Digital de Terreno, que mostraram alterações quando as máscaas da IA foram injetadas no processamento, indicando que apesar de ter sido um resulatdo sutil, podem influenciar na melhoria de qualidade final do processamento.
+
+Concluiu-se que é bem promissor o uso da IA para identificação de elementos anómalos em imagens de aerolevantamento para melhoria de qualidade de geração de Modelos Digitais de Terreno. Vale registrar que o dataset anotado que foi usado para a criação do modelo da IA, era de outro país, possuindo características naturais diferentes do nosso país (Brasil).
 
 ## Abstract
-Title: Automatic Mask Generation for Improving Digital Terrain Models in Photogrammetry
+Tools and applications for aerial photogrammetry have been gaining popularity and are being used as a great alternative for creating three-dimensional models that faithfully and virtually represent real terrain. Among these tools are Agisoft Metashape (formerly Agisoft Photoscan), Drone Deploy, and Open Drone Map (ODM - the focus of this experiment). These software applications make use of algorithms based on photogrammetry techniques and triangulation of known points in samples taken from consecutive, different, and closely spaced points in time, typically using unmanned aerial vehicles (e.g., multirotor drones). The input for these operations typically consists of many photos of the area of interest. These operations result in measurable products such as orthophotos and georeferenced 3D digital terrain models.
 
-Aerophotogrammetry tools and applications have been growing in popularity and are being used as excellent alternatives for creating three-dimensional models that faithfully and virtually represent real terrains. Among these tools are Agisoft Metashape (formerly Agisoft Photoscan), Drone Deploy, and Open Drone Map (ODM - the focus of this experiment). These software leverage stereoscopy algorithms and triangulation of known points from different samples. Typically, the input for these operations consists of multiple photos of the Area of Interest. The outputs of these operations include measurable products such as Orthophotos and 3D Digital Terrain Models, all georeferenced.
+To improve the accuracy of the digital terrain model and make it more faithful in its digital representation, in addition to post-processing based on GPS measurements and others, it is possible to use masks manually created with graphic editors that identify elements outside the natural terrain spectrum, such as buildings, houses, cars, bodies of water, and large green masses such as clusters of trees and forests. This experiment focused on the automatic construction of these masks using artificial intelligence techniques, more specifically Deep Learning. The technique used was Image Segmentation using the U-Net Network Architecture, where a model was created using a dataset with 400 different images and their respective annotations, classifying each pixel of the images.
 
-To enhance the accuracy and fidelity of the Digital Terrain Model representation, masks can be used to identify elements outside the Terrain spectrum, such as buildings, houses, vehicles, water bodies, and large green areas such as clusters of trees and forests. These masks are manually created using graphic editing software. This experiment focuses on the automatic construction of these masks using a conversion algorithm and Image Segmentation through the U-NET Network Architecture. Models will be created using different datasets and their respective annotations. The masks will then be reprocessed in ODM, and the results will serve as a comparative analysis for this experiment.
+After creating the model, an unknown dataset was used for inference. To measure the gain from the application of the masks generated by AI, two processings of the unknown dataset were performed using the ODM software with the same parameters. The difference between the processings was the inclusion of the masks generated by AI in the second processing for comparison and evaluation of the experiment.
+
+As a result, small areas were identified in the Digital Terrain Model that showed changes when the AI masks were included in the processing, indicating that although the result was subtle, it can influence the overall improvement in the final quality of the processing.
+
+It was concluded that the use of AI for the identification of anomalous elements in aerial survey images is very promising for improving the quality of Digital Terrain Model generation. It is worth noting that the annotated dataset used for the creation of the AI model was from another country, with different natural characteristics compared to our country (Brazil).
 
 ## Introdução
 
-A técnica de Aerofotogrametria acelera o processo de estudos de relevo através do aerolevantamento feito por sensores remotos, neste caso Drones ou Vants que capturam imagens normalmente de forma autônoma, seguindo um plano de vôo previamente estudado. Após coleta das fotos, softwares aplicam algoritmos para gerarem produtos como Ortofotos e Modelos Digitais de Superfície (MDS) que representam o relevo ou o Ponto de Interesse (POI). O MDS inclui a representação de todos elementos capturados como construções, casas, carros, etc - que serão tratados neste artigo como **anomalias**, além do terreno natural.
+A técnica de Aerofotogrametria acelera o processo de estudos de relevo através do aerolevantamento feito por sensores remotos, neste caso Drones ou Vants que capturam imagens geralmente de forma autônoma, seguindo um plano de vôo previamente estudado. Após coleta das fotos, softwares aplicam algoritmos para gerarem produtos como Ortofotos e Modelos Digitais de Superfície (MDS) que representam o relevo ou o Área de Interesse (AOI ou POI Point of Interest em inglês). O MDS, de uma forma lúdica, é como se um lençol fosse sobreposto ao um terreno, onde inclui a representação de todos elementos capturados como construções, casas, carros, etc - que por vezes podem ser tratados neste experimento como **anomalias**, além do terreno natural.
 
-Com algoritmos embarcados nestes softwares, gera-se o Modelo Digital de Terreno (MDT), tais algoritmos buscam eliminar as anomalias citadas acima, através de triangulação e medição dos pontos tridimensionais gerados. Estes algoritmos entregam um produto muito bom quando bem parametrizados antes de seu processamento.
+Com algoritmos embarcados nestes softwares, gera-se o Modelo Digital de Terreno (MDT), tais algoritmos buscam eliminar as anomalias citadas acima, através de técnicas de triangulação e medição dos pontos tridimensionais gerados. Estes algoritmos entregam um produto muito bom quando bem parametrizados antes de seu processamento.
 
 ## Motivação
 O software Open Drone Map ([ODM](https://community.opendronemap.org)) e outros mais, possuem capacidade de adicionar mascáras em preto/branco ([ODM Masks](https://docs.opendronemap.org/masks/)) para fotos antes de seu processamento identificando as anomalias em cada foto tomada e desta forma o processamento irá desconsiderar tais máscaras no momento da geração do MDT.
@@ -52,9 +62,9 @@ As máscaras que identificam anomalias, devem ser criadas com editores gráficos
 </p>
 Acima um exemplo da imagem original, com sua respectiva máscara e seu MDT processado.
 
-Isto em um pequeno dataset com até 20 imagens, apesar de ser extenuante é plausível, porém quando estamos diante de um dataset acima de 20 imagens, o que é normal em aplicações deste tipo, pois as imagens se recobrem em pelo menos 70%, torna-se impraticável.
+Em um pequeno dataset com até 20 imagens, apesar de ser extenuante, é plausível. Quando estamos diante de um dataset acima de 20 imagens, o que é normal em aplicações deste tipo, pois as imagens se recobrem em pelo menos 70%, tornando-se uma tarefa longa para que se possa começar o processamento e nos dias atuais com cronogramas mais apertados, pode-se impactar diretamente cronogramas.
 
-Este experimento terá como foco a técnica uma variação de Deep Learning conhecida como Segmentação de Imagens através da Arquitetura de Rede U-NET.
+Este experimento teve como base técnica, uma variação de Deep Learning conhecida como Segmentação de Imagens através da Arquitetura de Rede U-NET.
 
 Para um melhor entendimento do experimento, trago alguns conceitos de tecnologia e processos importantes que fazem parte deste experimento.
 
@@ -62,16 +72,17 @@ Para um melhor entendimento do experimento, trago alguns conceitos de tecnologia
 Esta seção traz alguns conceitos e informações técnicas para melhor entendimento do experimento.
 
 ### Aerofotogrametria
-A aerofotogrametria é uma técnica de obtenção de informações do terreno ou superfície terrestre a partir de fotografias aéreas. Ela é utilizada para criar modelos digitais de superfície, mapas topográficos e ortofotos de áreas geográficas extensas, como cidades, florestas, rios, entre outros. A técnica envolve o uso de câmeras montadas em aeronaves, drones ou balões para capturar imagens aéreas do terreno. Em seguida, são aplicados algoritmos e técnicas de processamento de imagem para extrair informações geográficas e topográficas precisas e úteis para uma variedade de aplicações em engenharia, planejamento urbano, agricultura, meio ambiente, entre outras áreas.
+A aerofotogrametria é uma técnica de obtenção de informações do terreno ou superfície terrestre a partir de fotografias aéreas. Ela é utilizada para criar modelos tridimensionais, como exmplo: modelos digitais de superfície, mapas topográficos e ortofotos de áreas geográficas extensas, representando cidades, florestas, rios, entre outros como. A técnica envolve o uso de câmeras montadas em aeronaves, drones ou balões para capturar imagens aéreas do terreno. Em seguida, são aplicados algoritmos e técnicas de processamento de imagem para extrair informações geográficas e topográficas precisas e úteis para uma variedade de aplicações em engenharia, planejamento urbano, agricultura, meio ambiente, entre outras áreas.
 
 Através de técnicas de aerofotogrametria, é possível obter:
 + Ortofotos;
 + Modelo Digital de Superfície e de Terreno;
 + Curvas de Nível;
-+ Cálculos Volumétricos.
++ Cálculos Volumétricos
++ etc...
 
 ### Segmentação de imagens
-Segmentação de imagens é uma tarefa de processamento de imagens que envolve a divisão de uma imagem em regiões ou segmentos significativos, onde cada segmento representa uma região semântica da imagem. O objetivo é separar as regiões de interesse da imagem de acordo com sua semântica, tornando mais fácil a análise e o processamento dessas regiões isoladamente. A segmentação de imagens é frequentemente usada em aplicações de visão computacional, como reconhecimento de objetos, análise de imagem médica e robótica.
+Segmentação de imagens é uma tarefa de processamento de imagens que envolve a classificação de cada pixel de uma imagem criando regiões ou segmentos significativos, onde cada segmento representa uma região semântica da imagem. O objetivo é separar as regiões de interesse da imagem de acordo com sua semântica, tornando mais fácil a análise e o processamento dessas regiões isoladamente. A segmentação de imagens é frequentemente usada em aplicações de visão computacional, como reconhecimento de objetos, análise de imagens médicas, carros autônomos e robótica. O seu uso vem se mostrando mais eficaz que a análise humana para identificação de anomalias ou determinados elementos em imagens, incluindo vídeos e capturas em tempo real.
 
 <p align="center">
   <img alt="segim01" width=400 src= "https://miro.medium.com/v2/resize:fit:720/format:webp/1*kUrAUjDQ0zr1cegMvUrUqg.jpeg"/>
@@ -85,7 +96,7 @@ A U-Net é uma arquitetura de rede neural convolucional desenvolvida para segmen
 
 A ideia por trás do U-Net é usar uma arquitetura de rede neural convolucional com camadas de "encoding" e "decoding" para segmentar imagens. A rede tem uma forma simétrica, com camadas de convolução para comprimir as informações da imagem e camadas de convolução transposta para expandir as informações e gerar uma máscara de segmentação para a imagem.
 
-O U-Net foi projetado para lidar com imagens médicas, onde a segmentação é necessária para a identificação precisa de estruturas como tumores e órgãos. No entanto, a arquitetura tem sido utilizada com sucesso em outras aplicações de segmentação de imagem, como segmentação de objetos em imagens de satélite e detecção de células em imagens de microscópio.
+O U-Net foi projetado para lidar com imagens médicas, onde a segmentação é necessária para a identificação precisa de estruturas como tumores e órgãos. No entanto, a arquitetura tem sido utilizada com sucesso em outras aplicações de segmentação de imagem, como segmentação de objetos em imagens de satélite.
 
 Devido à sua eficácia em tarefas de segmentação de imagem, o U-Net tornou-se uma das arquiteturas mais populares e amplamente utilizadas em visão computacional e aprendizado profundo.
 
@@ -94,15 +105,6 @@ A arquitetura U-Net pode ser considerada uma variação/extensão de um autoenco
 No entanto, a U-Net possui uma diferença significativa em relação a um autoencoder convencional: a presença de caminhos de atalho (skip connections) que conectam camadas do encoder diretamente ao decoder. Esses caminhos de atalho permitem a preservação de informações de alta resolução do input original, o que ajuda a melhorar o desempenho da rede na tarefa de segmentação de imagens.
 
 Portanto, a U-Net pode ser considerada uma extensão do autoencoder convencional, que é projetado especificamente para tarefas de segmentação de imagens, onde a preservação da resolução espacial é fundamental.
-
-### MBRSC dataset (72 imagens e 6 classes)
-O MBRSC dataset está sob a licença CC0, disponível para [download](https://www.kaggle.com/humansintheloop/semantic-segmentation-of-aerial-imagery). Consiste em imagens aéreas de Dubait obtidas por MBRSC satélites e anotadas manualmente com segmentação semântica pixel a pixel em 6 classes. Existem três desafios principais associados ao conjunto de dados:
-
-1. As cores das classes são hexadecimais, enquanto as imagens das máscaras são RGB.
-2. O volume total do conjunto de dados é de 72 imagens agrupadas em seis blocos maiores. Setenta e duas imagens é um conjunto de dados relativamente pequeno para treinar uma rede neural.
-3. Cada ladrilho tem imagens de diferentes alturas e larguras, e algumas imagens dentro dos mesmos ladrilhos variam em tamanho. O modelo de rede neural espera entradas com dimensões espaciais iguais.
-
-![](https://miro.medium.com/v2/1*X0if3zq8fBrgr5YvpluaRw.png)
 
 ### Aerial Semantic Segmentation Drone Dataset (400 imagens e 24 classes)
 <p align="center">
@@ -156,18 +158,18 @@ O Drone Dataset é disponibilizado gratuitamente para entidades acadêmicas e n�
 
 
 ## Metodologia
-A metodologia para geração das máscaras, serão baseados em algoritmos de aprendizado de máquina, mais precisamente redes neurais convolucionais. A função e treinar um modelo capaz de detectar automaticamente os objetos de interesse na imagem. Esse modelo pode ser treinado com imagens anotadas manualmente que indiquem a localização desses objetos na imagem. Dessa forma, o modelo pode aprender padrões específicos associados a cada tipo de objeto e ser capaz de detectá-los com maior precisão.
+A metodologia para geração das máscaras, serão baseados em algoritmos de aprendizado de máquina, mais precisamente redes neurais convolucionais. A função e treinar um modelo capaz de detectar automaticamente os elementos de *des*interesse na imagem. Esse modelo foi treinado com imagens anotadas manualmente que indiquem a localização desses objetos na imagem. Dessa forma, o modelo pode aprender padrões específicos associados a cada tipo de elemento e ser capaz de detectá-los com maior precisão.
 
-Para abordagem, serão criados 2 modelos aczbaseados na arquitetura U-NET para inferências, para cada modelos serão usados 2 datasets de imagens com suas respectivas máscaras anotadas. Um dataset com 72 imagens possuindo 6 classes anotadas e outro dataset com 400 imagens com 24 classes anotadas.
+Para abordagem, foi criado um modelo baseados na arquitetura U-NET para inferências.Foi usado um dataset possuindo 400 imagens e suas respectivas imagens com 24 classes anotadas.
+O script hospedado no Kaggle sob o link: , mostra o treinamento do modelo. Uma cópia do notebook foi colocada neste repositório para fácil acesso sob o nome: .
 
-Após as inferências feitas, será um pós-processamento individual em cada um das máscaras geradas pela U-NET, convertendo as cores de cada pixel para preto ou branco respeitando a classificação de "não terreno" para anomalias, sendo estes pixels coloridos de preto e os pixels restantes de cada imagem serão considerados "terreno", sendo pintados de branco.
+Após as inferências feitas, um pós-processamento foi aplicado em cada um das máscaras geradas pela U-NET, convertendo as cores de cada pixel para preto ou branco respeitando a classificação de "não terreno" para anomalias, sendo estes pixels coloridos de preto e os pixels restantes de cada imagem, considerados "terreno", sendo pintados de branco.
+O script de inferência foi feito em máquina local e uma cópia foi do notebook foi colocada neste repositório para fácil acesso sob o nome: .
 
------------------------------------------------------------------------------------------------------------
-TODO
+Foi utilizado um dataset não conhecido do modelo de IA para efeitos comparativos. Dois processamentos foram feitos no ODM com os mesmos parâmentros. A diferença foi que no primeiro processamento, foram utilizadas somente as imagens originais e no outro foram adicionadas as máscaras para serem analisadas e observadas para que a comparação resultante fosse criada.
+
 ## Resultados {#resultados}
-Utilizaremos gráficos e outros recursos visuais para facilitar a compreensão dos dados. Faremos uma análise objetiva dos resultados e discutiremos sua relevância em relação ao objetivo do estudo.
-
-https://skfb.ly/oIsHv
+Neste https://skfb.ly/oIsHv
 
 <div class="sketchfab-embed-wrapper"> <iframe title="TCC PUC BI Master ORIGINAL" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2d5837cb0c2c454193ea2e3fb963a598/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/tcc-puc-bi-master-original-2d5837cb0c2c454193ea2e3fb963a598?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> TCC PUC BI Master ORIGINAL </a> by <a href="https://sketchfab.com/marcio.delrei?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> marcio.delrei </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=2d5837cb0c2c454193ea2e3fb963a598" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
 
