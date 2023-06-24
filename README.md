@@ -1,3 +1,8 @@
+Trabalho de final de curso PUC-Rio BI MASTER
+Autor: Márcio d'El-Rei (marcio.delrei@gmail.com)
+Orientadora: Prof DSc Manoela Kohler
+__________________________________________________________________________________________________
+
 # Aerofotogrametria - Segmentação de Imagens Aéreas para MDT otimizado
 <p align="center">
   <img alt="intro01" src="http://static.wixstatic.com/media/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg/v1/fill/w_737,h_605,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/32ebcf_1113d51260504980b1c65fedfba2383d~mv2.jpg" width="280" hspace="10" />
