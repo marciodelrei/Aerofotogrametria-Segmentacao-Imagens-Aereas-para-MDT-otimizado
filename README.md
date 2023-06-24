@@ -200,7 +200,7 @@ Como resultado, comparamos o MDT gerado pelos 2 processamentos Imagens Sem másc
 
 A imagem acima demonstra uma alteração sutil entre os MDT's, porém isto já indica que o mascaramento influencia em sua geração.
 
-Abaixo geramos curvas de nível que representam o terreno e fica um pouco mais claro esta diferença, onde cores azuis demontram o MDT Sem máscaras e linha magenta representa o MDT com máscaras IA, comprovando a eliminação de anomalias.
+Abaixo geramos curvas de nível que representam o terreno e fica um pouco mais claro esta diferença, onde cores azuis demontram o MDT sem máscaras e linha magenta representa o MDT com máscaras IA, comprovando a eliminação de anomalias.
 
 <p align="center">
   <img alt="MDT sem máscaras IA- Curvas de nível de 1m" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_CN1m_SemMascara.png" width="380" hspace="10" />
