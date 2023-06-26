@@ -94,7 +94,7 @@ Através de técnicas de aerofotogrametria, é possível obter:
 + etc...
 
 ### Segmentação de imagens
-Segmentação de imagens é uma tarefa de processamento de imagens que envolve a classificação de cada pixel de uma imagem criando regiões ou segmentos significativos, onde cada segmento representa uma região semântica da imagem. O objetivo é separar as regiões de interesse da imagem de acordo com sua semântica, tornando mais fácil a análise e o processamento dessas regiões isoladamente. A segmentação de imagens é frequentemente usada em aplicações de visão computacional, como reconhecimento de objetos, análise de imagens médicas, carros autônomos e robótica. O seu uso vem se mostrando mais eficaz que a análise humana para identificação de anomalias ou determinados elementos em imagens, incluindo vídeos e capturas em tempo real.
+A segmentação de imagens é uma tarefa de processamento de imagens que envolve a classificação de cada pixel de uma imagem, criando regiões ou segmentos significativos, onde cada segmento representa uma região semântica da imagem. O objetivo é separar as regiões de interesse da imagem de acordo com sua semântica, facilitando a análise e o processamento dessas regiões isoladamente. A segmentação de imagens é frequentemente utilizada em aplicações de visão computacional, como reconhecimento de objetos, análise de imagens médicas, carros autônomos e robótica. Seu uso tem se mostrado mais eficaz do que a análise humana na identificação de anomalias ou elementos específicos em imagens, incluindo vídeos e capturas em tempo real.
 
 <p align="center">
   <img alt="segim01" width=400 src= "https://miro.medium.com/v2/resize:fit:720/format:webp/1*kUrAUjDQ0zr1cegMvUrUqg.jpeg"/>
@@ -104,19 +104,19 @@ Segmentação de imagens é uma tarefa de processamento de imagens que envolve a
 ### Arquitetura U-Net
 ![](https://miro.medium.com/v2/1*n1PFaorpCSvxiIaA2Ub1bA.png)
 
-A U-Net é uma arquitetura de rede neural convolucional desenvolvida para segmentação de imagem, que foi proposta em 2015 por Olaf Ronneberger, Philipp Fischer e Thomas Brox. O nome "U-Net" vem da forma da arquitetura, que se parece com a letra "U".
+A U-Net é uma arquitetura de rede neural convolucional desenvolvida para segmentação de imagem, proposta em 2015 por Olaf Ronneberger, Philipp Fischer e Thomas Brox. O nome "U-Net" deriva da forma da arquitetura, que se assemelha à letra "U".
 
-A ideia por trás do U-Net é usar uma arquitetura de rede neural convolucional com camadas de "encoding" e "decoding" para segmentar imagens. A rede tem uma forma simétrica, com camadas de convolução para comprimir as informações da imagem e camadas de convolução transposta para expandir as informações e gerar uma máscara de segmentação para a imagem.
+A ideia por trás da U-Net é utilizar uma arquitetura de rede neural convolucional com camadas de codificação (encoding) e decodificação (decoding) para segmentar imagens. A rede tem uma estrutura simétrica, com camadas de convolução para comprimir as informações da imagem e camadas de convolução transposta para expandir as informações e gerar uma máscara de segmentação para a imagem.
 
-O U-Net foi projetado para lidar com imagens médicas, onde a segmentação é necessária para a identificação precisa de estruturas como tumores e órgãos. No entanto, a arquitetura tem sido utilizada com sucesso em outras aplicações de segmentação de imagem, como segmentação de objetos em imagens de satélite.
+A U-Net foi projetada para lidar com imagens médicas, onde a segmentação é necessária para a identificação precisa de estruturas como tumores e órgãos. No entanto, essa arquitetura tem sido bem-sucedida em outras aplicações de segmentação de imagem, como segmentação de objetos em imagens de satélite.
 
-Devido à sua eficácia em tarefas de segmentação de imagem, o U-Net tornou-se uma das arquiteturas mais populares e amplamente utilizadas em visão computacional e aprendizado profundo.
+Devido à sua eficácia em tarefas de segmentação de imagem, a U-Net se tornou uma das arquiteturas mais populares e amplamente utilizadas em visão computacional e aprendizado profundo.
 
-A arquitetura U-Net pode ser considerada uma variação/extensão de um autoencoder, já que a sua estrutura é composta por um "encoder" que reduz a dimensão do espaço de características (representações) e um "decoder" que reconstrói a imagem original a partir dessas representações.
+A arquitetura da U-Net pode ser considerada uma variação ou extensão de um autoencoder, pois é composta por um "encoder" que reduz a dimensão do espaço de características (representações) e um "decoder" que reconstrói a imagem original a partir dessas representações.
 
-No entanto, a U-Net possui uma diferença significativa em relação a um autoencoder convencional: a presença de caminhos de atalho (skip connections) que conectam camadas do encoder diretamente ao decoder. Esses caminhos de atalho permitem a preservação de informações de alta resolução do input original, o que ajuda a melhorar o desempenho da rede na tarefa de segmentação de imagens.
+No entanto, a U-Net possui uma diferença significativa em relação a um autoencoder convencional: a presença de conexões de atalho (skip connections) que conectam camadas do encoder diretamente ao decoder. Essas conexões de atalho permitem a preservação de informações de alta resolução do input original, o que ajuda a melhorar o desempenho da rede na tarefa de segmentação de imagens.
 
-Portanto, a U-Net pode ser considerada uma extensão do autoencoder convencional, que é projetado especificamente para tarefas de segmentação de imagens, onde a preservação da resolução espacial é fundamental.
+Portanto, a U-Net pode ser considerada uma extensão do autoencoder convencional, projetada especificamente para tarefas de segmentação de imagens, onde a preservação da resolução espacial é fundamental.
 
 ### Aerial Semantic Segmentation Drone Dataset (400 imagens e 24 classes)
 <p align="center">
@@ -124,7 +124,7 @@ Portanto, a U-Net pode ser considerada uma extensão do autoencoder convencional
 </p>
 O Semantic Drone dataset está disponível [aqui](https://www.tugraz.at/index.php?id=22387) ou [aqui](https://www.kaggle.com/datasets/bulentsiyah/semantic-drone-dataset).
 
-O Semantic Drone Dataset concentra-se na compreensão semântica de cenas urbanas para aumentar a segurança dos procedimentos autônomos de voo e pouso de drones. As imagens retratam mais de 20 casas de nadir (vista aérea) adquiridas a uma altitude de 5 a 30 metros acima do solo. Uma câmera de alta resolução foi usada para adquirir imagens em um tamanho de 6000x4000px (24Mpx). O conjunto de treinamento contém 400 imagens disponíveis publicamente.
+O Semantic Drone Dataset tem como foco a compreensão semântica de cenas urbanas para melhorar a segurança dos procedimentos autônomos de voo e pouso de drones. As imagens retratam mais de 20 áreas residenciais capturadas a partir de uma visão nadir (vista aérea), adquiridas a uma altitude de 5 a 30 metros acima do solo. Foi utilizada uma câmera de alta resolução para capturar imagens com tamanho de 6000x4000 pixels (24Mpx). O conjunto de treinamento contém 400 imagens disponíveis publicamente.
 
 Classes:
 <table>
@@ -160,31 +160,35 @@ Classes:
 Fonte: [Graz University of Technology - http://dronedataset.icg.tugraz.at](http://dronedataset.icg.tugraz.at)
 
 Licença:
-O Drone Dataset é disponibilizado gratuitamente para entidades acadêmicas e não acadêmicas para fins não comerciais, como pesquisa acadêmica, ensino, publicações científicas ou experimentação pessoal. A permissão é concedida para usar os dados desde que você concorde:
+O Drone Dataset é disponibilizado gratuitamente para entidades acadêmicas e não acadêmicas para fins não comerciais, como pesquisa acadêmica, ensino, publicações científicas ou experimentação pessoal. Ao utilizar os dados, é necessário concordar com as seguintes condições:
 
-- Que o conjunto de dados vem "AS-IS", sem garantia expressa ou implícita. Embora todos os esforços tenham sido feitos para garantir a precisão, nós (Graz University of Technology) não aceitamos qualquer responsabilidade por erros ou omissões.
-- Que você inclua uma referência ao "Semantic Drone Dataset" em qualquer trabalho que faça uso do conjunto de dados. Para trabalhos de pesquisa ou outro link de mídia para a página da web Semantic Drone Dataset.
-- Que você não distribua este conjunto de dados ou versões modificadas. É permitido distribuir trabalhos derivados desde que sejam representações abstratas deste conjunto de dados (como modelos treinados nele ou anotações adicionais que não incluam diretamente nenhum de nossos dados) e não permitam recuperar o conjunto de dados ou algo semelhante em personagem.
-- Que você não pode usar o conjunto de dados ou qualquer trabalho derivado para fins comerciais como, por exemplo, licenciar ou vender os dados ou usar os dados com o objetivo de obter um ganho comercial.
-- Que todos os direitos não expressamente concedidos a você são reservados por nós (Graz University of Technology).
+- O conjunto de dados é fornecido "NO ESTADO EM QUE SE ENCONTRA", sem garantia expressa ou implícita. Embora tenham sido feitos todos os esforços para garantir a precisão, nós (Universidade de Tecnologia de Graz) não nos responsabilizamos por erros ou omissões.
+- É necessário incluir uma referência ao "Semantic Drone Dataset" em qualquer trabalho que faça uso do conjunto de dados. Para trabalhos de pesquisa ou outras formas de mídia, é necessário fornecer um link para a página web do Semantic Drone Dataset.
+- A distribuição do conjunto de dados ou versões modificadas não é permitida. No entanto, é permitido distribuir trabalhos derivados que sejam representações abstratas deste conjunto de dados, como modelos treinados com base nele ou anotações adicionais que não incluam diretamente nenhum dos nossos dados, desde que não permitam a recuperação do conjunto de dados ou algo semelhante.
+- O conjunto de dados e qualquer trabalho derivado dele não podem ser utilizados para fins comerciais, como licenciamento ou venda dos dados, ou para obter ganhos comerciais.
+- Todos os direitos não expressamente concedidos são reservados por nós (Graz University of Technology).
 
 
 ## Metodologia
-A metodologia para geração das máscaras, serão baseados em algoritmos de aprendizado de máquina, mais precisamente redes neurais convolucionais. A função e treinar um modelo capaz de detectar automaticamente os elementos de *des*interesse na imagem. Esse modelo foi treinado com imagens anotadas manualmente que indiquem a localização desses objetos na imagem. Dessa forma, o modelo pode aprender padrões específicos associados a cada tipo de elemento e ser capaz de detectá-los com maior precisão.
+A metodologia para geração das máscaras será baseada em algoritmos de aprendizado de máquina, mais precisamente redes neurais convolucionais. O objetivo é treinar um modelo capaz de detectar automaticamente os elementos indesejados na imagem. Esse modelo foi treinado com imagens que foram manualmente anotadas para indicar a localização desses objetos na imagem. Dessa forma, o modelo pode aprender padrões específicos associados a cada tipo de elemento e ser capaz de detectá-los com maior precisão.
 
-Para abordagem, foi criado um modelo baseados na arquitetura U-NET para inferências.Foi usado um dataset possuindo 400 imagens e suas respectivas imagens com 24 classes anotadas.
+Para essa abordagem, foi criado um modelo baseado na arquitetura U-Net para inferências. Foi utilizado um conjunto de dados composto por 400 imagens e suas respectivas máscaras anotadas com 24 classes.
+
 O script hospedado no Kaggle sob o link: [aerial-semantic-segmentation-puc-rio-bi-master-tcc.ipynb](https://www.kaggle.com/code/marciodelrei/aerial-semantic-segmentation-puc-rio-bi-master-tcc?kernelSessionId=134697143), mostra o treinamento do modelo. Uma cópia do notebook foi colocada neste repositório para fácil acesso sob o nome: aerial-semantic-segmentation-puc-rio-bi-master-tcc.ipynb. Ele está com o output, tornando-se pesado para renderização no view do Github.
 
-Após as inferências feitas, um pós-processamento foi aplicado em cada um das máscaras geradas pela U-NET, convertendo as cores de cada pixel para preto ou branco respeitando a classificação de "não terreno" para anomalias, sendo estes pixels coloridos de preto e os pixels restantes de cada imagem, considerados "terreno", sendo pintados de branco.
-O script de inferência foi feito em máquina local e uma cópia foi do notebook foi colocada neste repositório para fácil acesso sob o nome: [model_inference.ipynb](https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/model_inference.ipynb).
+O script está hospedado no Kaggle através do seguinte link: [aerial-semantic-segmentation-puc-rio-bi-master-tcc.ipynb](https://www.kaggle.com/code/marciodelrei/aerial-semantic-segmentation-puc-rio-bi-master-tcc?kernelSessionId=134697143). Uma cópia do notebook foi colocada neste repositório para fácil acesso, com o nome aerial-semantic-segmentation-puc-rio-bi-master-tcc.ipynb. No entanto, devido ao seu tamanho e à presença do output, a visualização do notebook pode ficar lenta no modo de visualização do GitHub.
 
-Foi utilizado um dataset não conhecido do modelo de IA para efeitos comparativos. Dois processamentos foram feitos no ODM com os mesmos parâmentros. A diferença foi que no primeiro processamento, foram utilizadas somente as imagens originais e no outro foram adicionadas as máscaras para serem analisadas e observadas para que a comparação resultante fosse criada.
+Após realizar as inferências, um pós-processamento foi aplicado às máscaras geradas pela U-Net. Nesse processo, cada pixel das máscaras foi convertido para preto ou branco, dependendo da classificação. Os pixels que representam "não terreno" (anomalias) foram coloridos de preto, enquanto os pixels restantes de cada imagem, considerados "terreno", foram pintados de branco.
+
+O script de inferência foi executado em uma máquina local e uma cópia do notebook foi disponibilizada neste repositório para fácil acesso, com o nome [model_inference.ipynb](https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/model_inference.ipynb).
+
+Foi utilizado um dataset desconhecido pelo modelo de IA com o objetivo de realizar comparações. Foram realizados dois processamentos no ODM com os mesmos parâmetros. A diferença entre eles foi que, no primeiro processamento, foram utilizadas apenas as imagens originais, enquanto no segundo, as máscaras foram adicionadas para análise e observação, a fim de criar a comparação resultante.
 
 ## Resultados
 O treinamento do modelo alcançou 86% de acurácia conforme o gráfico:
 ![image](https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/assets/7377875/869a4432-104c-4d5c-8b37-730b18c8e535)
 
-Conforme citado, produtos interessantes podem gerados e como exemplo foi exposto no Skecthfab o Modelo Digital de Superfície para apreciação: [MDS no Sketchfab](https://skfb.ly/oIsHv)
+Conforme citado, produtos interessantes podem ser gerados, como exemplo, foi exposto no Skecthfab o Modelo Digital de Superfície para apreciação: [MDS no Sketchfab](https://skfb.ly/oIsHv)
 <p align="center">
   <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDS_processado.jpg">
 </p>
@@ -194,14 +198,14 @@ Os parâmetros nos processamento dos MDT's foram os mesmos:
   <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/Painel%20-%20WebODM.png">
 </p>
 
-Como resultado, comparamos o MDT gerado pelos 2 processamentos Imagens Sem máscaras e Imagens com Máscaras inferidas pela IA:
+Como resultado, comparamos o MDT gerado pelos 2 processamentos um com Imagens Sem máscaras e outro com as Imagens Com Máscaras inferidas pela IA:
 <p align="center">
   <img alt="mds" width=800 src= "https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_compare.gif">
 </p>
 
-A imagem acima demonstra uma alteração sutil entre os MDT's, porém isto já indica que o mascaramento influencia em sua geração.
+A imagem acima demonstra uma alteração sutil entre os MDTs, o que indica que o mascaramento influencia em sua geração.
 
-Abaixo geramos curvas de nível que representam o terreno e fica um pouco mais claro esta diferença, onde cores azuis demontram o MDT sem máscaras e linha magenta representa o MDT com máscaras IA, comprovando a eliminação de anomalias.
+Abaixo, foram geradas curvas de nível que representam o terreno, tornando um pouco mais claro essa diferença. As cores azuis representam o MDT sem máscaras, enquanto a linha magenta representa o MDT com máscaras de IA, comprovando a eliminação de anomalias.
 
 <p align="center">
   <img alt="MDT sem máscaras IA- Curvas de nível de 1m" src="https://github.com/marciodelrei/Aerofotogrametria-Segmentacao-Imagens-Aereas-para-MDT-otimizado/blob/main/MDT_CN1m_SemMascara.png" width="380" hspace="10" />
@@ -212,9 +216,9 @@ Abaixo geramos curvas de nível que representam o terreno e fica um pouco mais c
 </p>
 
 ## Conclusão
-Com a apresentação dos resultados, mesmo que sejam sutis, a injestão de máscaras para processamento sensibilizam os algoritmos de geração de MDT. A criação de modelos de Segmentação Semântica de Imagens com auxílio de IA pode economizam tempo na geração de máscaras que detectam anomalias. Ao analisarmos as saídas do algoritmo do Kaggle do modelo, vemos que muitas imagens anotadas são necesárias para que possamos melhorar a acurácia do modelo de IA. A realização do treinamento do modelo de IA com datasets anotados com cenários regionais, provavelmete ajudarão o modelo nas inferências.
+Com a apresentação dos resultados, mesmo que sejam sutis, a inclusão de máscaras para processamento sensibiliza os algoritmos de geração de MDT. A criação de modelos de Segmentação Semântica de Imagens com o auxílio de IA pode economizar tempo na geração de máscaras que detectam anomalias. Ao analisarmos as saídas do algoritmo do Kaggle do modelo, observamos que são necessárias muitas imagens anotadas para melhorar a precisão do modelo de IA. O treinamento do modelo de IA com conjuntos de dados anotados com cenários regionais provavelmente ajudará o modelo nas inferências.
 
-A utilização de modelos pré-treinados como o SAM (Segment Anything Model) do Facebook, por exemplo, não foram testados e podem ser utilizados para trabalho futuro em cima dos algoritmos aqui apresentados, com as devidas alterações para seu pleno funcionamento.
+A utilização de modelos pré-treinados, como o SAM (Segment Anything Model) do Facebook, por exemplo, não foi testada, mas pode ser explorada em trabalhos futuros com base nos algoritmos apresentados, com as devidas alterações para garantir seu pleno funcionamento.
 
 ## Referências e Links interessantes
 ------------------------------------------------------------------------------------------------------------
